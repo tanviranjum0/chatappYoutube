@@ -16,11 +16,11 @@ function ChatsList() {
   if (chats.length === 0) return <NoChatsFound />;
 
   return (
-    <>
+    <div className="border-2 border-green-300/20 rounded-xl shadow-xl">
       {chats.map((chat) => (
         <div
           key={chat._id}
-          className="bg-cyan-500/10 p-4 rounded-lg cursor-pointer hover:bg-cyan-500/20 transition-colors"
+          className="bg-cyan-500/10 p-4 rounded cursor-pointer hover:bg-cyan-500/20 transition-colors"
           onClick={() => setSelectedUser(chat)}
         >
           <div className="flex items-center gap-3">
@@ -29,11 +29,11 @@ function ChatsList() {
                 <img src={chat.profilePic || "/avatar.png"} alt={chat.fullName} />
               </div>
             </div>
-            <h4 className="text-slate-200 font-medium truncate">{chat.fullName}</h4>
+            <h4 className="text-slate-100/70 font-medium truncate">{chat.fullName}</h4>
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 export default ChatsList;
